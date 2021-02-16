@@ -1,21 +1,44 @@
 <template>
   <div class="tweet-form container" :class="{ open: showForm }">
-    <form action="">
-      <input type="text" class="form-control" placeholder="Tu nombre" />
+    <form @submit.prevent="sendTweet">
+      <input
+        type="text"
+        v-model="username"
+        class="form-control"
+        placeholder="Tu nombre"
+      />
       <textarea
         class="form-control"
         rows="3"
         placeholder="Escribe tu tweet"
+        v-model="tweet"
       ></textarea>
-      <button type="button" class="btn btn-primary">Enviar Tweet</button>
+      <button type="submit" class="btn btn-primary">Enviar Tweet</button>
     </form>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   props: {
     showForm: Boolean,
+  },
+
+  setup() {
+    let username = ref("");
+    let tweet = ref("");
+
+    const sendTweet = () => {
+      console.log("enviando formulario");
+      console.log(username.value, tweet.value);
+    };
+
+    return {
+      sendTweet,
+      username,
+      tweet,
+    };
   },
 };
 </script>
