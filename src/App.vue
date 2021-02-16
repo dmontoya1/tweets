@@ -1,10 +1,14 @@
 <template>
-  <h1 class="">Simulador de tweets</h1>
+  <Menu />
 </template>
 
 <script>
+import Menu from "./components/Menu";
 export default {
   name: "App",
+  components: {
+    Menu,
+  },
 };
 </script>
 
