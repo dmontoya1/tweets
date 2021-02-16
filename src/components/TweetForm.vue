@@ -20,6 +20,7 @@
 
 <script>
 import { ref } from "vue";
+import { saveTweetApi } from "./../api/tweet";
 export default {
   props: {
     showForm: Boolean,
@@ -32,6 +33,7 @@ export default {
     const sendTweet = () => {
       console.log("enviando formulario");
       console.log(username.value, tweet.value);
+      saveTweetApi(tweet.value, username.value);
     };
 
     return {
