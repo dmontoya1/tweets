@@ -31,8 +31,6 @@ export default {
     let tweet = ref("");
 
     const sendTweet = () => {
-      console.log("enviando formulario");
-      console.log(username.value, tweet.value);
       saveTweetApi(tweet.value, username.value);
     };
 
