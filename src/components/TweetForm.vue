@@ -1,5 +1,5 @@
 <template>
-  <div class="tweet-form container">
+  <div class="tweet-form container" :class="{ open: showForm }">
     <form action="">
       <input type="text" class="form-control" placeholder="Tu nombre" />
       <textarea
@@ -13,14 +13,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    showForm: Boolean,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .tweet-form {
   margin-top: 20px;
-  // height: 0;
+  height: 0;
   overflow: hidden;
+
+  &.open {
+    height: auto;
+  }
 
   form {
     margin-bottom: 50px;
