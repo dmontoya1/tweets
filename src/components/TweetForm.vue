@@ -38,7 +38,7 @@ export default {
       tweet.value = "";
       username.value = "";
       props.reloadTweets();
-      props.openCloseForm();
+      props.openClosedForm();
     };
 
     return {
